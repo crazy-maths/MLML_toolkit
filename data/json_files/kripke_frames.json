@@ -1,0 +1,124 @@
+{
+    "kripke_frames": [
+        {
+            "name": "Frame Paper",
+            "signature_name": "Sign Paper",
+            "worlds": [
+                {
+                    "name_long": "state2",
+                    "name_short": "w2"
+                },
+                {
+                    "name_long": "state1",
+                    "name_short": "w1"
+                },
+                {
+                    "name_long": "state3",
+                    "name_short": "w3"
+                }
+            ],
+            "initial_world": "w1",
+            "accessibility_relation": {
+                "a1": {
+                    "w1": ["w2", "w3"],
+                    "w2": [],
+                    "w3": []
+                }
+            }
+        },
+        {
+            "name": "Frame To Test",
+            "signature_name": "Sign Paper",
+            "worlds": [
+                {
+                    "name_long": "state3",
+                    "name_short": "s3"
+                },
+                {
+                    "name_long": "state1",
+                    "name_short": "s1"
+                },
+                {
+                    "name_long": "state2",
+                    "name_short": "s2"
+                }
+            ],
+            "initial_world": "s1",
+            "accessibility_relation": {
+                "a1": {
+                    "s1": ["s3", "s2"],
+                    "s3": [],
+                    "s2": []
+                }
+            }
+        },
+        {
+            "name": "Kripke Frame To Reduct",
+            "signature_name": "Sign_test",
+            "worlds": [
+                {
+                    "name_long": "state4",
+                    "name_short": "s4"
+                },
+                {
+                    "name_long": "state3",
+                    "name_short": "s3"
+                },
+                {
+                    "name_long": "state2",
+                    "name_short": "s2"
+                },
+                {
+                    "name_long": "state1",
+                    "name_short": "s1"
+                }
+            ],
+            "initial_world": "s1",
+            "accessibility_relation": {
+                "a": {
+                    "s1": ["s2"],
+                    "s2": ["s3"],
+                    "s3": ["s4"],
+                    "s4": ["s1"]
+                },
+                "b": {
+                    "s2": ["s1"],
+                    "s3": ["s2"],
+                    "s4": ["s3"],
+                    "s1": ["s4"]
+                }
+            }
+        },
+        {
+            "name": "Frame_Reduct Model Test",
+            "signature_name": "Sign Paper",
+            "worlds": [
+                {
+                    "name_long": "state2",
+                    "name_short": "s2"
+                },
+                {
+                    "name_long": "state4",
+                    "name_short": "s4"
+                },
+                {
+                    "name_long": "state3",
+                    "name_short": "s3"
+                },
+                {
+                    "name_long": "state1",
+                    "name_short": "s1"
+                }
+            ],
+            "initial_world": "s1",
+            "accessibility_relation": {
+                "a1": {
+                    "s1": ["s2"],
+                    "s2": ["s3"],
+                    "s3": ["s4"],
+                    "s4": ["s1"]
+                }
+            }
+        }
+    ]
+}

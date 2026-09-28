@@ -1,0 +1,212 @@
+{
+    "models": [
+        {
+            "name": "Model Paper",
+            "kripke_frame_name": "Frame Paper",
+            "many_lattice_name": "Many Lattice Paper",
+            "signature_name": "Sign Paper",
+            "worlds": [
+                {
+                    "name_long": "state3",
+                    "name_short": "w3"
+                },
+                {
+                    "name_long": "state1",
+                    "name_short": "w1"
+                },
+                {
+                    "name_long": "state2",
+                    "name_short": "w2"
+                }
+            ],
+            "initial_world": "w1",
+            "world_lattices": {
+                "w3": "L3 Paper",
+                "w1": "L1 Paper",
+                "w2": "L2 Paper"
+            },
+            "valuations": {
+                "w3": {
+                    "p": "b"
+                },
+                "w1": {
+                    "p": "x"
+                },
+                "w2": {
+                    "p": "a"
+                }
+            },
+            "description": "",
+            "accessibility_relation": {
+                "a1": {
+                    "w1": ["w3", "w2"],
+                    "w3": [],
+                    "w2": []
+                }
+            }
+        },
+        {
+            "name": "Model Test",
+            "kripke_frame_name": "Frame To Test",
+            "many_lattice_name": "Many Lattice Paper",
+            "signature_name": "Sign Paper",
+            "worlds": [
+                {
+                    "name_long": "state1",
+                    "name_short": "s1"
+                },
+                {
+                    "name_long": "state3",
+                    "name_short": "s3"
+                },
+                {
+                    "name_long": "state2",
+                    "name_short": "s2"
+                }
+            ],
+            "initial_world": "s1",
+            "world_lattices": {
+                "s1": "L1 Paper",
+                "s3": "L3 Paper",
+                "s2": "L2 Paper"
+            },
+            "valuations": {
+                "s1": {
+                    "p": "0"
+                },
+                "s3": {
+                    "p": "0"
+                },
+                "s2": {
+                    "p": "1"
+                }
+            },
+            "description": "",
+            "accessibility_relation": {
+                "a1": {
+                    "s1": ["s3", "s2"],
+                    "s3": [],
+                    "s2": []
+                }
+            }
+        },
+        {
+            "name": "Model To Reduct",
+            "kripke_frame_name": "Kripke Frame To Reduct",
+            "many_lattice_name": "Many Lattice Paper",
+            "signature_name": "Sign_test",
+            "worlds": [
+                {
+                    "name_long": "state2",
+                    "name_short": "s2"
+                },
+                {
+                    "name_long": "state4",
+                    "name_short": "s4"
+                },
+                {
+                    "name_long": "state3",
+                    "name_short": "s3"
+                },
+                {
+                    "name_long": "state1",
+                    "name_short": "s1"
+                }
+            ],
+            "initial_world": "s1",
+            "world_lattices": {
+                "s2": "L2 Paper",
+                "s4": "Lattice Paper",
+                "s3": "L1 Paper",
+                "s1": "L3 Paper"
+            },
+            "valuations": {
+                "s2": {
+                    "p": "1",
+                    "q": "1"
+                },
+                "s4": {
+                    "p": "0",
+                    "q": "0"
+                },
+                "s3": {
+                    "p": "1",
+                    "q": "1"
+                },
+                "s1": {
+                    "p": "0",
+                    "q": "0"
+                }
+            },
+            "description": "",
+            "accessibility_relation": {
+                "a": {
+                    "s1": ["s2"],
+                    "s2": ["s3"],
+                    "s3": ["s4"],
+                    "s4": ["s1"]
+                },
+                "b": {
+                    "s2": ["s1"],
+                    "s3": ["s2"],
+                    "s4": ["s3"],
+                    "s1": ["s4"]
+                }
+            }
+        },
+        {
+            "name": "Reduct Model Test",
+            "kripke_frame_name": "Frame_Reduct Model Test",
+            "many_lattice_name": "Many Lattice Paper",
+            "signature_name": "Sign Paper",
+            "worlds": [
+                {
+                    "name_long": "state2",
+                    "name_short": "s2"
+                },
+                {
+                    "name_long": "state4",
+                    "name_short": "s4"
+                },
+                {
+                    "name_long": "state3",
+                    "name_short": "s3"
+                },
+                {
+                    "name_long": "state1",
+                    "name_short": "s1"
+                }
+            ],
+            "initial_world": "s1",
+            "world_lattices": {
+                "s2": "L2 Paper",
+                "s4": "Lattice Paper",
+                "s3": "L1 Paper",
+                "s1": "L3 Paper"
+            },
+            "valuations": {
+                "s2": {
+                    "p": "1"
+                },
+                "s4": {
+                    "p": "0"
+                },
+                "s3": {
+                    "p": "1"
+                },
+                "s1": {
+                    "p": "0"
+                }
+            },
+            "description": "Reduct of Model To Reduct via morf_sign_test",
+            "accessibility_relation": {
+                "a1": {
+                    "s1": ["s2"],
+                    "s2": ["s3"],
+                    "s3": ["s4"],
+                    "s4": ["s1"]
+                }
+            }
+        }
+    ]
+}

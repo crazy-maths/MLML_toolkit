@@ -1,0 +1,19 @@
+{
+    "signatures": [
+        {
+            "name": "Sign_test",
+            "propositions": ["q", "p"],
+            "actions": ["b", "a"]
+        },
+        {
+            "name": "Sign_test2",
+            "propositions": ["r", "s"],
+            "actions": ["d", "c"]
+        },
+        {
+            "name": "Sign Paper",
+            "propositions": ["p"],
+            "actions": ["a1"]
+        }
+    ]
+}

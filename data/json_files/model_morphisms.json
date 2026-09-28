@@ -1,0 +1,15 @@
+{
+    "model_morphisms": [
+        {
+            "name": "Model M test",
+            "kripke_frame_morphism_name": "Frame M TEST",
+            "source_model": "Model Paper",
+            "target_model": "Model Test",
+            "world_map": {
+                "w1": "s1",
+                "w2": "s2",
+                "w3": "s3"
+            }
+        }
+    ]
+}

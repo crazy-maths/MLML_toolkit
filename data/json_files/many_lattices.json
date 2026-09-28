@@ -1,0 +1,19 @@
+{
+    "many_lattices": [
+        {
+            "many_lattice_name": "Many Lattice Boolean Algebra",
+            "filtered_lattice_name": "Filter Boolean Algebra",
+            "comp_sub_lat": ["Boolean Algebra", "Many Lattice Boolean Algebra Top"]
+        },
+        {
+            "many_lattice_name": "Many Lattice Paper",
+            "filtered_lattice_name": "Filter Lattice Paper",
+            "comp_sub_lat": [
+                "Lattice Paper",
+                "L3 Paper",
+                "L2 Paper",
+                "L1 Paper"
+            ]
+        }
+    ]
+}

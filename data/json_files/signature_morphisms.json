@@ -1,0 +1,28 @@
+{
+    "signature_morphisms": [
+        {
+            "name": "Morf1",
+            "source_sig": "Sign_test",
+            "target_sig": "Sign_test2",
+            "prop_map": {
+                "p": "r",
+                "q": "s"
+            },
+            "act_map": {
+                "a": "c",
+                "b": "d"
+            }
+        },
+        {
+            "name": "morf_sign_test",
+            "source_sig": "Sign Paper",
+            "target_sig": "Sign_test",
+            "prop_map": {
+                "p": "q"
+            },
+            "act_map": {
+                "a1": "a"
+            }
+        }
+    ]
+}
