@@ -75,11 +75,26 @@ class NewFilteredLatticeDialog(QDialog):
 
     def accept(self):
         """Validation before closing."""
-        name, base, filter_set = self.get_data()
+        name, base_name, filter_set = self.get_data()
         if not name:
             QMessageBox.warning(self, "Validation Error", "Please enter a name.")
             return
         if not filter_set:
             QMessageBox.warning(self, "Validation Error", "Please select at least one element for the filter.")
             return
+
+        if base_name in self.lattices:
+            base_lattice = self.lattices[base_name]
+            for x in filter_set:
+                for y in base_lattice.elements:
+                    if base_lattice.is_less_than_or_equal(x, y) and y not in filter_set:
+                        QMessageBox.warning(
+                            self,
+                            "Validation Error",
+                            f"The selected filter is not upward-closed:\n"
+                            f"'{x}' is in the filter and '{x}' \u2264 '{y}', "
+                            f"but '{y}' is not in the filter."
+                        )
+                        return
+
         super().accept()

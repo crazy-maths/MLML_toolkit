@@ -119,6 +119,87 @@
                     "s4": ["s1"]
                 }
             }
+        },
+        {
+            "name": "Frame Auth Protocol",
+            "signature_name": "Sign Auth Protocol",
+            "worlds": [
+                {
+                    "name_long": "policyDecision",
+                    "name_short": "pD"
+                },
+                {
+                    "name_long": "accessDenied",
+                    "name_short": "aD"
+                },
+                {
+                    "name_long": "identityCheck",
+                    "name_short": "iC"
+                },
+                {
+                    "name_long": "requestReceived",
+                    "name_short": "rR"
+                },
+                {
+                    "name_long": "riskAssessment",
+                    "name_short": "rA"
+                },
+                {
+                    "name_long": "accessGranted",
+                    "name_short": "aG"
+                }
+            ],
+            "initial_world": "rR",
+            "accessibility_relation": {
+                "setUp": {
+                    "pD": ["iC"],
+                    "aD": [],
+                    "iC": [],
+                    "rR": [],
+                    "rA": [],
+                    "aG": []
+                },
+                "grant": {
+                    "pD": ["aG"],
+                    "aD": [],
+                    "iC": [],
+                    "rR": [],
+                    "rA": [],
+                    "aG": []
+                },
+                "decide": {
+                    "rA": ["pD"],
+                    "pD": [],
+                    "aD": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": []
+                },
+                "assess": {
+                    "iC": ["rA"],
+                    "pD": [],
+                    "aD": [],
+                    "rR": [],
+                    "rA": [],
+                    "aG": []
+                },
+                "deny": {
+                    "iC": ["aD"],
+                    "rA": ["aD"],
+                    "pD": ["aD"],
+                    "aD": [],
+                    "rR": [],
+                    "aG": []
+                },
+                "authenticate": {
+                    "rR": ["iC"],
+                    "pD": [],
+                    "aD": [],
+                    "iC": [],
+                    "rA": [],
+                    "aG": []
+                }
+            }
         }
     ]
 }

@@ -14,6 +14,23 @@
             "name": "Sign Paper",
             "propositions": ["p"],
             "actions": ["a1"]
+        },
+        {
+            "name": "Sign Auth Protocol",
+            "propositions": [
+                "lowRisk",
+                "credValid",
+                "deviceTrusted",
+                "granted"
+            ],
+            "actions": [
+                "setUp",
+                "grant",
+                "decide",
+                "assess",
+                "deny",
+                "authenticate"
+            ]
         }
     ]
 }

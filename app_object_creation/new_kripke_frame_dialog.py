@@ -126,7 +126,8 @@ class NewKripkeFrameDialog(QDialog):
         self.world_long_input = QLineEdit()
         self.world_long_input.setPlaceholderText("Long Name (e.g. State_1)")
         self.world_short_input = QLineEdit()
-        self.world_short_input.setPlaceholderText("Short Name (e.g. s1)")
+        self.world_short_input.setPlaceholderText("Short Name (e.g. s1, max 5 chars)")
+        self.world_short_input.setMaxLength(5)
         btn_add_world = QPushButton("Add State")
         btn_add_world.clicked.connect(self.add_world)
         btn_remove_world = QPushButton("Remove Selected")
@@ -160,6 +161,22 @@ class NewKripkeFrameDialog(QDialog):
             if w.name_long == long_name:
                 QMessageBox.warning(self, "Duplicate State", f"State with long name '{long_name}' already exists.")
                 return
+
+        if len(short_name) > 5:
+            QMessageBox.warning(
+                self,
+                "Input Error",
+                f"The short name ('{short_name}') cannot exceed 5 characters."
+            )
+            return
+
+        if len(short_name) > len(long_name):
+            QMessageBox.warning(
+                self,
+                "Input Error",
+                f"The short name ('{short_name}', {len(short_name)} chars) cannot be longer than the long name ('{long_name}', {len(long_name)} chars)."
+            )
+            return
 
         world = World(name_long=long_name, name_short=short_name)
         self.created_worlds[short_name] = world

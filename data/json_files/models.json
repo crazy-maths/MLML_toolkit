@@ -207,6 +207,136 @@
                     "s4": ["s1"]
                 }
             }
+        },
+        {
+            "name": "Model Auth Protocol",
+            "kripke_frame_name": "Frame Auth Protocol",
+            "many_lattice_name": "Many Lattice Auth Protocol",
+            "signature_name": "Sign Auth Protocol",
+            "worlds": [
+                {
+                    "name_long": "accessDenied",
+                    "name_short": "aD"
+                },
+                {
+                    "name_long": "policyDecision",
+                    "name_short": "pD"
+                },
+                {
+                    "name_long": "accessGranted",
+                    "name_short": "aG"
+                },
+                {
+                    "name_long": "requestReceived",
+                    "name_short": "rR"
+                },
+                {
+                    "name_long": "riskAssessment",
+                    "name_short": "rA"
+                },
+                {
+                    "name_long": "identityCheck",
+                    "name_short": "iC"
+                }
+            ],
+            "initial_world": "rR",
+            "world_lattices": {
+                "aD": "Lattice Auth Protocol B2",
+                "pD": "Lattice Auth Protocol Linear4",
+                "aG": "Lattice Auth Protocol B2",
+                "rR": "L6",
+                "rA": "Lattice Auth Protocol B4",
+                "iC": "Lattice Auth Protocol B4"
+            },
+            "valuations": {
+                "aD": {
+                    "credValid": "0",
+                    "deviceTrusted": "0",
+                    "granted": "0",
+                    "lowRisk": "0"
+                },
+                "pD": {
+                    "credValid": "1",
+                    "deviceTrusted": "t",
+                    "granted": "0",
+                    "lowRisk": "1"
+                },
+                "aG": {
+                    "credValid": "1",
+                    "deviceTrusted": "1",
+                    "granted": "1",
+                    "lowRisk": "1"
+                },
+                "rR": {
+                    "credValid": "n",
+                    "deviceTrusted": "b",
+                    "granted": "0",
+                    "lowRisk": "n"
+                },
+                "rA": {
+                    "credValid": "t",
+                    "deviceTrusted": "t",
+                    "granted": "t",
+                    "lowRisk": "n"
+                },
+                "iC": {
+                    "credValid": "t",
+                    "deviceTrusted": "b",
+                    "granted": "f",
+                    "lowRisk": "n"
+                }
+            },
+            "description": "MLML model of the Authorization Protocol.",
+            "accessibility_relation": {
+                "setUp": {
+                    "pD": ["iC"],
+                    "aD": [],
+                    "aG": [],
+                    "rR": [],
+                    "rA": [],
+                    "iC": []
+                },
+                "decide": {
+                    "rA": ["pD"],
+                    "aD": [],
+                    "pD": [],
+                    "aG": [],
+                    "rR": [],
+                    "iC": []
+                },
+                "grant": {
+                    "pD": ["aG"],
+                    "aD": [],
+                    "aG": [],
+                    "rR": [],
+                    "rA": [],
+                    "iC": []
+                },
+                "deny": {
+                    "iC": ["aD"],
+                    "rA": ["aD"],
+                    "pD": ["aD"],
+                    "aD": [],
+                    "aG": [],
+                    "rR": []
+                },
+                "assess": {
+                    "iC": ["rA"],
+                    "aD": [],
+                    "pD": [],
+                    "aG": [],
+                    "rR": [],
+                    "rA": []
+                },
+                "authenticate": {
+                    "rR": ["iC"],
+                    "aD": [],
+                    "pD": [],
+                    "aG": [],
+                    "rA": [],
+                    "iC": []
+                }
+            }
         }
     ]
 }

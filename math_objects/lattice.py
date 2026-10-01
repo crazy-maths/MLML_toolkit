@@ -259,11 +259,24 @@ class FilteredLattice(Lattice):
         self.name_filtered_lattice = name_filtered_lattice
         self.filter = filter if filter is not None else set()
 
-        if not self._check_filter():
-            raise ValueError("The Filter must be a subset of the Lattice elements.")
+        is_valid, error_msg = self._check_filter()
+        if not is_valid:
+            _get_logger().error(f"Filter validation failed for '{self.name_filtered_lattice}': {error_msg}")
+            raise ValueError(error_msg)
 
-    def _check_filter(self) -> bool:
-        return self.filter.issubset(self.elements)
+    def _check_filter(self) -> Tuple[bool, str]:
+        if not self.filter.issubset(self.elements):
+            return False, "The Filter must be a subset of the Lattice elements."
+
+        for x in self.filter:
+            for y in self.elements:
+                if self.is_less_than_or_equal(x, y) and y not in self.filter:
+                    return False, (
+                        f"The Filter is not upward-closed: element '{x}' is in the filter "
+                        f"and '{x}' <= '{y}', but '{y}' is not in the filter."
+                    )
+
+        return True, ""
 
     def __repr__(self) -> str:
         return f"{self.name_filtered_lattice}"

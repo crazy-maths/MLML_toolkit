@@ -14,6 +14,16 @@
                 "L2 Paper",
                 "L1 Paper"
             ]
+        },
+        {
+            "many_lattice_name": "Many Lattice Auth Protocol",
+            "filtered_lattice_name": "Filter L6",
+            "comp_sub_lat": [
+                "L6",
+                "Lattice Auth Protocol B2",
+                "Lattice Auth Protocol B4",
+                "Lattice Auth Protocol Linear4"
+            ]
         }
     ]
 }

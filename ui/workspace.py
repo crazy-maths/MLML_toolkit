@@ -36,7 +36,7 @@ class WorkspaceWidget(QWidget):
         self.btn_hasse.setEnabled(False)
         self.btn_hasse.clicked.connect(self.hasse_requested.emit)
         
-        self.btn_model = QPushButton("Show Model Graph")
+        self.btn_model = QPushButton("Show Frame")
         self.btn_model.setEnabled(False)
         self.btn_model.clicked.connect(self.model_requested.emit)
 

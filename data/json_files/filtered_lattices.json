@@ -9,6 +9,11 @@
             "filtered_lattice_name": "Filter Lattice Paper",
             "lattice_name": "Lattice Paper",
             "filter": ["1"]
+        },
+        {
+            "filtered_lattice_name": "Filter L6",
+            "lattice_name": "L6",
+            "filter": ["1", "t"]
         }
     ]
 }

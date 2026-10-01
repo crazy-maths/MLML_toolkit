@@ -1,1 +1,851 @@
 2026-09-28 13:05:42,585 [INFO] root: Logs cleared by user.
+2026-09-28 13:13:57,240 [INFO] MainWindow: MainWindow initialized successfully.
+2026-09-28 13:13:59,366 [INFO] ErrorHandler: Mathematical Definitions: 
+        <div style="font-family: Arial, sans-serif; color: #E0E0E0; line-height: 1.5; padding: 6px;">
+            <h2 style="color: #3498db; margin-bottom: 8px;">Mathematical Definitions Reference</h2>
+
+            <div style="background-color: #2D3139; border: 1px solid #444A57; border-radius: 6px; padding: 10px; margin-bottom: 12px;">
+                <b style="color: #3498db;">1. Signature & Signature Morphism</b><br>
+                A <b>Signature</b> &Sigma; = (Prop, Act) defines propositional variables and actions.<br>
+                A <b>Signature Morphism</b> &sigma;: &Sigma;<sub>1</sub> &rarr; &Sigma;<sub>2</sub> consists of mappings 
+                <i>f: Prop<sub>1</sub> &rarr; Prop<sub>2</sub></i> and <i>g: Act<sub>1</sub> &rarr; Act<sub>2</sub></i>.
+            </div>
+
+            <div style="background-color: #2D3139; border: 1px solid #444A57; border-radius: 6px; padding: 10px; margin-bottom: 12px;">
+                <b style="color: #3498db;">2. Lattices, Filtered Lattices & Many-Lattices</b><br>
+                A <b>Lattice</b> L = (A, &le;) is a poset where every pair of elements has meet (&and;) and join (&or;).<br>
+                A <b>Filtered Lattice</b> (L, D) pairs a base lattice with and a filter D &sube; A.<br>
+                A <b>Many-Lattice</b> associates a filtered lattice with a family of complete sublattices.
+            </div>
+
+            <div style="background-color: #2D3139; border: 1px solid #444A57; border-radius: 6px; padding: 10px; margin-bottom: 12px;">
+                <b style="color: #3498db;">3. Kripke Frame & Kripke Frame Morphism</b><br>
+                A <b>Kripke Frame</b> over &Sigma; is a tuple &lang;W, w<sub>0</sub>, (R<sub>a</sub> )<sub>a &isin; Act</sub>&rang; where 
+                W is a set of states, w<sub>0</sub> &isin; W is the initial state, and R<sub>a</sub> &sube; W &times; W.<br>
+                A <b>Kripke Frame Morphism</b> h: F &rarr; F' between frames over the same signature preserves:
+                <ul style="margin: 4px 0 4px 18px; padding: 0;">
+                    <li>Initial state: h(w<sub>0</sub>) = w'<sub>0</sub></li>
+                    <li>Transitions: If w<sub>1</sub> R<sub>a</sub> w<sub>2</sub>, then h(w<sub>1</sub>) R'<sub>a</sub> h(w<sub>2</sub>)</li>
+                </ul>
+            </div>
+
+            <div style="background-color: #2D3139; border: 1px solid #444A57; border-radius: 6px; padding: 10px; margin-bottom: 12px;">
+                <b style="color: #3498db;">4. Model & Model Morphism</b><br>
+                A <b>Model</b> extends a Kripke frame by attributing a complete sublattice I(w) to each state w &isin; W, 
+                plus local valuations v(w, p): W &times; Prop &rarr; I(w).<br>
+                A <b>Model Morphism</b> is a frame morphism h that additionally preserves local sublattices: 
+                I(w) = I'(h(w)) for all w &isin; W.
+            </div>
+
+            <div style="background-color: #2D3139; border: 1px solid #444A57; border-radius: 6px; padding: 10px; margin-bottom: 6px;">
+                <b style="color: #3498db;">5. Reduct Model</b><br>
+                Given &sigma;: &Sigma;<sub>1</sub> &rarr; &Sigma;<sub>2</sub> and a model M<sub>2</sub> over &Sigma;<sub>2</sub>, the <b>Reduct Model</b> M<sub>1</sub> = M<sub>2</sub>|<sub>&sigma;</sub> over &Sigma;<sub>1</sub> preserves the states, initial state, and world sublattices, while pulling back transitions and valuations:
+                <ul style="margin: 4px 0 4px 18px; padding: 0;">
+                    <li>x R<sub>a</sub> y iff x R<sub>&sigma;(a)</sub> y</li>
+                    <li>v<sub>1</sub>(w, p) = v<sub>2</sub>(w, &sigma;(p))</li>
+                </ul>
+            </div>
+        </div>
+        
+2026-09-28 13:14:08,627 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,627 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,627 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,627 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 13:14:08,642 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 13:14:08,643 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 13:14:08,643 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,644 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 13:14:08,663 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 13:14:08,664 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 13:14:08,665 [INFO] Structure: KripkeFrame 'Model Paper' initialized (3 worlds, 1 actions).
+2026-09-28 13:14:08,665 [INFO] Structure: Model 'Model Paper' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-28 13:14:08,668 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,668 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,669 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,670 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 13:14:08,671 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 13:14:08,672 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 13:14:08,672 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,673 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 13:14:08,674 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 13:14:08,674 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 13:14:08,674 [INFO] Structure: KripkeFrame 'Model Test' initialized (3 worlds, 1 actions).
+2026-09-28 13:14:08,675 [INFO] Structure: Model 'Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-28 13:14:08,675 [INFO] StructureMorphism: KripkeFrameMorphism 'Model M test' initialized: Model Paper -> Model Test
+2026-09-28 13:14:08,675 [INFO] ObjectManager: Registered Model Morphism: Model M test
+2026-09-28 13:14:08,675 [INFO] ObjectManager: Registered Model: Model Paper
+2026-09-28 13:14:08,677 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 13:14:08,677 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 13:14:08,677 [INFO] ObjectManager: Registered Kripke Frame: Frame Paper
+2026-09-28 13:14:08,677 [INFO] ObjectManager: Registered Signature: Sign Paper
+2026-09-28 13:14:08,677 [INFO] ObjectManager: Registered Many Lattice: Many Lattice Paper
+2026-09-28 13:14:08,677 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,677 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,677 [INFO] ObjectManager: Registered Filtered Lattice: Filter Lattice Paper
+2026-09-28 13:14:08,677 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 13:14:08,677 [INFO] ObjectManager: Registered Lattice: Lattice Paper
+2026-09-28 13:14:08,677 [INFO] ObjectManager: Registered Lattice: L3 Paper
+2026-09-28 13:14:08,685 [INFO] ObjectManager: Registered Lattice: L2 Paper
+2026-09-28 13:14:08,685 [INFO] ObjectManager: Registered Lattice: L1 Paper
+2026-09-28 13:14:08,685 [INFO] ObjectManager: Registered Model: Model Test
+2026-09-28 13:14:08,687 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 13:14:08,688 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 13:14:08,688 [INFO] ObjectManager: Registered Kripke Frame: Frame To Test
+2026-09-28 13:14:08,695 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 13:14:08,696 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 13:14:08,696 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 13:14:08,696 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 13:14:08,697 [INFO] StructureMorphism: KripkeFrameMorphism 'Frame M TEST' initialized: Frame Paper -> Frame To Test
+2026-09-28 13:14:08,697 [INFO] ObjectManager: Registered Kripke Frame Morphism: Frame M TEST
+2026-09-28 17:26:25,879 [INFO] MainWindow: MainWindow initialized successfully.
+2026-09-28 17:26:28,358 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:26:28,358 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:26:28,358 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-28 17:26:28,358 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:26:28,358 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:26:28,358 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:37:48,666 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:37:48,666 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-09-28 17:37:48,666 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:37:56,776 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:37:56,776 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:37:56,776 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:37:56,776 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:37:56,776 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:37:56,776 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:37:56,776 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-28 17:37:56,776 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:37:56,776 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:37:56,776 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:00,996 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:00,996 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:00,996 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:00,996 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:01,000 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:01,000 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-28 17:38:01,000 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:01,000 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-28 17:38:07,647 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:07,647 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-09-28 17:38:07,647 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:11,200 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:11,202 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-09-28 17:38:11,202 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:15,137 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:15,137 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:15,137 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:15,137 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:15,137 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:15,137 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:15,137 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-28 17:38:15,137 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:15,137 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:15,137 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:19,721 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:19,721 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:19,721 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:19,723 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:19,723 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:19,723 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-28 17:38:19,723 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:19,723 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: ManyLattice 'Many Lattice Boolean Algebra' initialized with 2 sublattices.
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:19,726 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 17:38:22,768 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:22,768 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:22,768 [INFO] Structure: KripkeFrame 'Model Paper' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:22,768 [INFO] Structure: Model 'Model Paper' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:22,768 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 17:38:22,782 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:22,782 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:22,782 [INFO] Structure: KripkeFrame 'Model Test' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:22,782 [INFO] Structure: Model 'Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 17:38:22,782 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:22,782 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-28 17:38:22,782 [INFO] Structure: KripkeFrame 'Model To Reduct' initialized (4 worlds, 2 actions).
+2026-09-28 17:38:22,782 [INFO] Structure: Model 'Model To Reduct' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:22,782 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 17:38:22,782 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:22,782 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-28 17:38:22,782 [INFO] Structure: KripkeFrame 'Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-28 17:38:22,782 [INFO] Structure: Model 'Reduct Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-28 17:38:22,782 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:22,782 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:22,798 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:22,798 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:22,798 [INFO] StructureMorphism: KripkeFrameMorphism 'Frame M TEST' initialized: Frame Paper -> Frame To Test
+2026-09-28 17:38:26,059 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:26,059 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:26,059 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:26,059 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:26,059 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:26,059 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-28 17:38:26,059 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:26,059 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-28 17:38:29,227 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:29,227 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-09-28 17:38:29,227 [INFO] SignatureMorphism: SignatureMorphism 'Morf1' initialized: Sign_test -> Sign_test2
+2026-09-28 17:38:29,227 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:29,243 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:29,243 [INFO] SignatureMorphism: SignatureMorphism 'morf_sign_test' initialized: Sign Paper -> Sign_test
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 17:38:29,243 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:29,243 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:29,243 [INFO] Structure: KripkeFrame 'Model Paper' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:29,243 [INFO] Structure: Model 'Model Paper' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 17:38:29,243 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:29,243 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:29,243 [INFO] Structure: KripkeFrame 'Model Test' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:29,243 [INFO] Structure: Model 'Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,243 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 17:38:29,259 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:29,259 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-28 17:38:29,259 [INFO] Structure: KripkeFrame 'Model To Reduct' initialized (4 worlds, 2 actions).
+2026-09-28 17:38:29,259 [INFO] Structure: Model 'Model To Reduct' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:29,259 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 17:38:29,259 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:29,259 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-28 17:38:29,259 [INFO] Structure: KripkeFrame 'Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-28 17:38:29,259 [INFO] Structure: Model 'Reduct Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-28 17:38:32,747 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:32,749 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:32,749 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:32,749 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 17:38:32,749 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:32,749 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-28 17:38:32,749 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:38:32,749 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:38:32,749 [INFO] MathObjects: ManyLattice 'Many Lattice Boolean Algebra' initialized with 2 sublattices.
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:38:32,749 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:38:32,763 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:38:32,763 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-28 17:38:36,957 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:38:36,957 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-09-28 17:38:36,957 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:40:56,770 [INFO] MainWindow: MainWindow initialized successfully.
+2026-09-28 17:50:14,319 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:50:14,319 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-09-28 17:50:14,319 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:57:03,780 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:57:03,780 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-28 17:57:03,780 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:57:03,780 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-28 17:57:03,780 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-28 17:57:03,780 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-28 17:57:03,780 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-28 17:57:03,780 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-28 17:57:03,780 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:57:03,780 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:57:03,780 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:57:03,780 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-28 17:57:03,780 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-28 17:57:03,780 [INFO] MathObjects: ManyLattice 'Many Lattice Boolean Algebra' initialized with 2 sublattices.
+2026-09-28 17:57:03,796 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:57:03,796 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:57:03,796 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:57:03,796 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-28 17:57:03,796 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-28 17:57:03,796 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-28 17:57:03,796 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-28 17:57:03,796 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 14:51:08,138 [INFO] MainWindow: MainWindow initialized successfully.
+2026-09-29 14:51:11,033 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 14:51:11,035 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 14:51:11,035 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:51:11,035 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:51:11,040 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 14:51:11,042 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:51:11,042 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-29 14:51:11,044 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 14:51:11,044 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 14:51:11,046 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 14:52:17,728 [INFO] MainWindow: MainWindow initialized successfully.
+2026-09-29 14:52:21,583 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 14:52:21,583 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 14:52:21,588 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:52:21,591 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:52:21,593 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 14:52:21,595 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:52:21,599 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-29 14:52:21,599 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 14:52:21,599 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 14:52:21,604 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 14:55:20,399 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 14:55:20,399 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-09-29 14:55:20,399 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:56:53,450 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:56:53,450 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-29 14:56:53,453 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:56:53,453 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-29 14:56:53,455 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 14:56:53,457 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 14:56:53,459 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:56:53,459 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 14:56:53,462 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 14:56:53,462 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 14:56:53,462 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 14:56:53,462 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-29 14:56:53,462 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 14:56:53,462 [INFO] MathObjects: ManyLattice 'Many Lattice Boolean Algebra' initialized with 2 sublattices.
+2026-09-29 14:56:53,462 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:56:53,462 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:56:53,462 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:56:53,462 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 14:56:53,475 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 14:56:53,476 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 14:56:53,476 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:56:53,476 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 14:58:34,811 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:58:34,813 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-29 14:58:34,813 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:58:34,813 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-29 14:58:34,813 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 14:58:34,813 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 14:58:34,813 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:58:34,813 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 14:58:50,610 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 14:58:50,610 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-09-29 14:58:50,610 [INFO] SignatureMorphism: SignatureMorphism 'Morf1' initialized: Sign_test -> Sign_test2
+2026-09-29 14:58:50,610 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:58:50,610 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 14:58:50,610 [INFO] SignatureMorphism: SignatureMorphism 'morf_sign_test' initialized: Sign Paper -> Sign_test
+2026-09-29 14:58:50,622 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,622 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,622 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,622 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 14:58:50,627 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 14:58:50,627 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 14:58:50,627 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,627 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 14:58:50,627 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:58:50,627 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-29 14:58:50,627 [INFO] Structure: KripkeFrame 'Model Paper' initialized (3 worlds, 1 actions).
+2026-09-29 14:58:50,627 [INFO] Structure: Model 'Model Paper' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 14:58:50,627 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,627 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,627 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,627 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 14:58:50,627 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 14:58:50,627 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 14:58:50,627 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,639 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 14:58:50,639 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:58:50,639 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-29 14:58:50,642 [INFO] Structure: KripkeFrame 'Model Test' initialized (3 worlds, 1 actions).
+2026-09-29 14:58:50,642 [INFO] Structure: Model 'Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 14:58:50,643 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,643 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,643 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,643 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 14:58:50,643 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 14:58:50,643 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 14:58:50,643 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,643 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 14:58:50,643 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 14:58:50,643 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 14:58:50,658 [INFO] Structure: KripkeFrame 'Model To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 14:58:50,658 [INFO] Structure: Model 'Model To Reduct' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 14:58:50,658 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,658 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,658 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,658 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 14:58:50,658 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 14:58:50,658 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 14:58:50,658 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 14:58:50,658 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 14:58:50,658 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 14:58:50,658 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 14:58:50,658 [INFO] Structure: KripkeFrame 'Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 14:58:50,658 [INFO] Structure: Model 'Reduct Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 15:00:39,775 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 15:00:39,777 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-29 15:00:39,779 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 15:00:39,781 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-29 15:00:39,784 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 15:00:39,784 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 15:00:39,787 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 15:00:39,787 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 15:01:53,048 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,064 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,066 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,066 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 15:01:53,066 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 15:01:53,066 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 15:01:53,066 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,066 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 15:01:53,066 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 15:01:53,066 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-29 15:01:53,066 [INFO] Structure: KripkeFrame 'Model Paper' initialized (3 worlds, 1 actions).
+2026-09-29 15:01:53,066 [INFO] Structure: Model 'Model Paper' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 15:01:53,080 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,080 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,085 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,085 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 15:01:53,085 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 15:01:53,085 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 15:01:53,085 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,085 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 15:01:53,085 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 15:01:53,085 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-29 15:01:53,085 [INFO] Structure: KripkeFrame 'Model Test' initialized (3 worlds, 1 actions).
+2026-09-29 15:01:53,085 [INFO] Structure: Model 'Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 15:01:53,096 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 15:01:53,098 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 15:01:53,098 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 15:01:53,098 [INFO] Structure: KripkeFrame 'Model To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 15:01:53,098 [INFO] Structure: Model 'Model To Reduct' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 15:01:53,098 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 15:01:53,112 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 15:01:53,112 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 15:01:53,112 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 15:01:53,112 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 15:01:53,112 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 15:01:53,112 [INFO] Structure: KripkeFrame 'Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 15:01:53,112 [INFO] Structure: Model 'Reduct Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 15:01:53,112 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 15:01:53,112 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-29 15:01:53,112 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 15:01:53,112 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-29 15:01:53,112 [INFO] StructureMorphism: KripkeFrameMorphism 'Frame M TEST' initialized: Frame Paper -> Frame To Test
+2026-09-29 15:13:46,184 [INFO] MainWindow: MainWindow initialized successfully.
+2026-09-29 20:04:03,063 [INFO] MainWindow: MainWindow initialized successfully.
+2026-09-29 20:04:09,887 [INFO] MainWindow: MainWindow initialized successfully.
+2026-09-29 20:07:19,438 [INFO] Signature: Signature 'Sign Auth Protocol' initialized (4 props, 6 acts).
+2026-09-29 20:07:19,454 [INFO] ObjectManager: Registered Signature: Sign Auth Protocol
+2026-09-29 20:11:18,163 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:11:18,169 [INFO] ObjectManager: Registered Lattice: L6
+2026-09-29 20:11:44,108 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:11:44,108 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:11:44,108 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-29 20:11:44,112 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 20:11:44,112 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 20:11:44,114 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 20:11:44,114 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:12:03,622 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:12:03,633 [INFO] JSONHandler: Filtered Lattice 'Filter L6' saved successfully.
+2026-09-29 20:12:03,634 [INFO] ObjectManager: Registered Filtered Lattice: Filter L6
+2026-09-29 20:12:08,856 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:12:08,856 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:12:08,858 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:12:08,858 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:12:08,860 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:12:08,860 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:12:08,862 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:12:08,863 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:12:08,863 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-29 20:12:08,865 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 20:12:08,865 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 20:12:08,865 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 20:12:08,865 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:14:46,378 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:14:46,378 [INFO] MathObjects: ManyLattice 'Many Lattice Auth Protocol' initialized with 0 sublattices.
+2026-09-29 20:14:46,378 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-09-29 20:14:46,378 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-09-29 20:14:46,384 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol B2
+2026-09-29 20:14:46,384 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-09-29 20:14:46,384 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-09-29 20:14:46,391 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol B4
+2026-09-29 20:14:46,391 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-09-29 20:14:46,396 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-09-29 20:14:46,405 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol Linear4
+2026-09-29 20:14:46,405 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:14:46,405 [INFO] MathObjects: ManyLattice 'Many Lattice Auth Protocol' initialized with 3 sublattices.
+2026-09-29 20:14:46,412 [INFO] ObjectManager: Registered Many Lattice: Many Lattice Auth Protocol
+2026-09-29 20:16:11,947 [INFO] MathObjects: Lattice 'Test' initialized (2 elements).
+2026-09-29 20:16:11,960 [INFO] ObjectManager: Registered Lattice: Test
+2026-09-29 20:16:22,290 [INFO] ErrorHandler: Prompting user confirmation - Confirm Deletion: Delete 1 item(s)?
+2026-09-29 20:16:23,293 [INFO] JSONHandler: Lattice 'Test' deleted.
+2026-09-29 20:16:23,294 [INFO] ObjectManager: Deleted Lattice: Test
+2026-09-29 20:16:43,466 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 20:16:43,466 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-09-29 20:16:43,466 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:16:43,466 [INFO] Signature: Signature 'Sign Auth Protocol' initialized (4 props, 6 acts).
+2026-09-29 20:19:55,117 [INFO] Structure: KripkeFrame 'Frame Auth Protocol' initialized (6 worlds, 6 actions).
+2026-09-29 20:19:55,120 [INFO] ObjectManager: Registered Kripke Frame: Frame Auth Protocol
+2026-09-29 20:22:06,567 [INFO] MainWindow: MainWindow initialized successfully.
+2026-09-29 20:22:14,307 [INFO] Signature: Signature 'Sign Auth Protocol' initialized (4 props, 6 acts).
+2026-09-29 20:22:14,307 [INFO] Structure: KripkeFrame 'Frame Auth Protocol' initialized (6 worlds, 6 actions).
+2026-09-29 20:22:14,307 [INFO] ObjectManager: Registered Kripke Frame: Frame Auth Protocol
+2026-09-29 20:22:14,307 [INFO] ObjectManager: Registered Signature: Sign Auth Protocol
+2026-09-29 20:22:16,635 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:22:16,635 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 20:22:16,642 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:22:16,651 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-09-29 20:22:16,651 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-09-29 20:22:16,651 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-09-29 20:22:21,774 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:22:21,774 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:22:21,774 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-09-29 20:22:21,774 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-09-29 20:22:21,774 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-09-29 20:22:21,774 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:22:21,774 [INFO] MathObjects: ManyLattice 'Many Lattice Auth Protocol' initialized with 3 sublattices.
+2026-09-29 20:22:21,774 [INFO] ObjectManager: Registered Many Lattice: Many Lattice Auth Protocol
+2026-09-29 20:22:21,774 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:22:21,774 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:22:21,774 [INFO] ObjectManager: Registered Filtered Lattice: Filter L6
+2026-09-29 20:22:21,784 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:22:21,784 [INFO] ObjectManager: Registered Lattice: L6
+2026-09-29 20:22:21,784 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol B2
+2026-09-29 20:22:21,784 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol B4
+2026-09-29 20:22:21,784 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol Linear4
+2026-09-29 20:23:13,816 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,817 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 20:23:13,818 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:23:13,818 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-29 20:23:13,818 [INFO] Structure: KripkeFrame 'Model Paper' initialized (3 worlds, 1 actions).
+2026-09-29 20:23:13,818 [INFO] Structure: Model 'Model Paper' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,818 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 20:23:13,818 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:23:13,818 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-29 20:23:13,818 [INFO] Structure: KripkeFrame 'Model Test' initialized (3 worlds, 1 actions).
+2026-09-29 20:23:13,818 [INFO] Structure: Model 'Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 20:23:13,833 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 20:23:13,833 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 20:23:13,833 [INFO] Structure: KripkeFrame 'Model To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 20:23:13,833 [INFO] Structure: Model 'Model To Reduct' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:13,833 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 20:23:13,833 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:23:13,833 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 20:23:13,833 [INFO] Structure: KripkeFrame 'Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 20:23:13,833 [INFO] Structure: Model 'Reduct Model Test' initialized with ManyLattice 'Many Lattice Paper'.
+2026-09-29 20:23:13,833 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:23:13,833 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-29 20:23:13,833 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:23:13,833 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-29 20:23:13,833 [INFO] StructureMorphism: KripkeFrameMorphism 'Frame M TEST' initialized: Frame Paper -> Frame To Test
+2026-09-29 20:23:19,496 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:23:19,496 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-29 20:23:19,496 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:23:19,496 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-29 20:23:19,504 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 20:23:19,504 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 20:23:19,504 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:23:19,504 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 20:23:19,504 [INFO] Signature: Signature 'Sign Auth Protocol' initialized (4 props, 6 acts).
+2026-09-29 20:23:19,504 [INFO] Structure: KripkeFrame 'Frame Auth Protocol' initialized (6 worlds, 6 actions).
+2026-09-29 20:23:19,504 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:23:19,512 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:23:19,512 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:23:19,512 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-29 20:23:19,512 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:23:19,512 [INFO] MathObjects: ManyLattice 'Many Lattice Boolean Algebra' initialized with 2 sublattices.
+2026-09-29 20:23:19,512 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:19,512 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:19,512 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:19,518 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 20:23:19,518 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 20:23:19,519 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 20:23:19,519 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:23:19,519 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 20:23:19,522 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:23:19,522 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:23:19,522 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-09-29 20:23:19,522 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-09-29 20:23:19,522 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-09-29 20:23:19,522 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:23:19,522 [INFO] MathObjects: ManyLattice 'Many Lattice Auth Protocol' initialized with 3 sublattices.
+2026-09-29 20:26:01,610 [INFO] ErrorHandler: Prompting user confirmation - Confirm Deletion: Delete 1 item(s)?
+2026-09-29 20:26:02,455 [INFO] JSONHandler: Many Lattice 'Many Lattice Auth Protocol' deleted.
+2026-09-29 20:26:02,455 [INFO] ObjectManager: Deleted Many Lattice: Many Lattice Auth Protocol
+2026-09-29 20:26:18,126 [INFO] ErrorHandler: Prompting user confirmation - Confirm Deletion: Delete 3 item(s)?
+2026-09-29 20:26:19,027 [INFO] JSONHandler: Lattice 'Lattice Auth Protocol B2' deleted.
+2026-09-29 20:26:19,027 [INFO] ObjectManager: Deleted Lattice: Lattice Auth Protocol B2
+2026-09-29 20:26:19,035 [INFO] JSONHandler: Lattice 'Lattice Auth Protocol B4' deleted.
+2026-09-29 20:26:19,035 [INFO] ObjectManager: Deleted Lattice: Lattice Auth Protocol B4
+2026-09-29 20:26:19,043 [INFO] JSONHandler: Lattice 'Lattice Auth Protocol Linear4' deleted.
+2026-09-29 20:26:19,043 [INFO] ObjectManager: Deleted Lattice: Lattice Auth Protocol Linear4
+2026-09-29 20:26:31,089 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:26:31,089 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:26:31,089 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:26:31,089 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:26:31,089 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:26:31,089 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:26:31,089 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:26:31,089 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:26:31,089 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-29 20:26:31,105 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 20:26:31,105 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 20:26:31,105 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 20:26:31,105 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:28:27,181 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:28:27,181 [INFO] MathObjects: ManyLattice 'Many Lattice Auth Protocol' initialized with 0 sublattices.
+2026-09-29 20:28:27,186 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-09-29 20:28:27,186 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-09-29 20:28:27,189 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol B2
+2026-09-29 20:28:27,189 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-09-29 20:28:27,189 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-09-29 20:28:27,189 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol B4
+2026-09-29 20:28:27,189 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-09-29 20:28:27,189 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-09-29 20:28:27,202 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol Linear4
+2026-09-29 20:28:27,202 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:28:27,202 [INFO] MathObjects: ManyLattice 'Many Lattice Auth Protocol' initialized with 4 sublattices.
+2026-09-29 20:28:27,211 [INFO] ObjectManager: Registered Many Lattice: Many Lattice Auth Protocol
+2026-09-29 20:28:36,820 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:28:36,820 [INFO] Structure: KripkeFrame 'Frame Paper' initialized (3 worlds, 1 actions).
+2026-09-29 20:28:36,820 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:28:36,820 [INFO] Structure: KripkeFrame 'Frame To Test' initialized (3 worlds, 1 actions).
+2026-09-29 20:28:36,820 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-09-29 20:28:36,820 [INFO] Structure: KripkeFrame 'Kripke Frame To Reduct' initialized (4 worlds, 2 actions).
+2026-09-29 20:28:36,820 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-09-29 20:28:36,820 [INFO] Structure: KripkeFrame 'Frame_Reduct Model Test' initialized (4 worlds, 1 actions).
+2026-09-29 20:28:36,820 [INFO] Signature: Signature 'Sign Auth Protocol' initialized (4 props, 6 acts).
+2026-09-29 20:28:36,820 [INFO] Structure: KripkeFrame 'Frame Auth Protocol' initialized (6 worlds, 6 actions).
+2026-09-29 20:28:36,820 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:28:36,820 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:28:36,820 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: ManyLattice 'Many Lattice Boolean Algebra' initialized with 2 sublattices.
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: ManyLattice 'Many Lattice Paper' initialized with 4 sublattices.
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-09-29 20:28:36,836 [INFO] MathObjects: ManyLattice 'Many Lattice Auth Protocol' initialized with 4 sublattices.
+2026-09-29 20:36:09,244 [INFO] Structure: KripkeFrame 'Model Auth Protocol' initialized (6 worlds, 6 actions).
+2026-09-29 20:36:09,244 [INFO] Structure: Model 'Model Auth Protocol' initialized with ManyLattice 'Many Lattice Auth Protocol'.
+2026-09-29 20:36:09,250 [INFO] ObjectManager: Registered Model: Model Auth Protocol
+2026-09-29 20:38:48,914 [ERROR] EvaluationService: Validation error for formula '<stepUp>deviceTrusted': Action 'stepUp' is not part of the model's signature.
+2026-09-29 20:38:48,914 [ERROR] UIErrorHandler: UI Error in evaluate_formula: Action 'stepUp' is not part of the model's signature.
+Traceback (most recent call last):
+  File "C:\Users\rodri\Desktop\mlml_project\utils\decorators.py", line 11, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rodri\Desktop\mlml_project\ui\main_window.py", line 1064, in evaluate_formula
+    res_str = EvaluationService.evaluate(f_str, target_model, target_world, interpretation=mode)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rodri\Desktop\mlml_project\services\evaluation_service.py", line 49, in evaluate
+    res = root.evaluate(model, world, interpretation=interpretation)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rodri\Desktop\mlml_project\parser\formula_parser.py", line 362, in evaluate
+    raise ValueError(f"Action '{act}' is not part of the model's signature.")
+ValueError: Action 'stepUp' is not part of the model's signature.
+2026-09-29 20:39:01,680 [ERROR] EvaluationService: Validation error for formula '<stepUp>deviceTrusted': Action 'stepUp' is not part of the model's signature.
+2026-09-29 20:39:01,680 [ERROR] UIErrorHandler: UI Error in evaluate_formula: Action 'stepUp' is not part of the model's signature.
+Traceback (most recent call last):
+  File "C:\Users\rodri\Desktop\mlml_project\utils\decorators.py", line 11, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rodri\Desktop\mlml_project\ui\main_window.py", line 1064, in evaluate_formula
+    res_str = EvaluationService.evaluate(f_str, target_model, target_world, interpretation=mode)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rodri\Desktop\mlml_project\services\evaluation_service.py", line 49, in evaluate
+    res = root.evaluate(model, world, interpretation=interpretation)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rodri\Desktop\mlml_project\parser\formula_parser.py", line 362, in evaluate
+    raise ValueError(f"Action '{act}' is not part of the model's signature.")
+ValueError: Action 'stepUp' is not part of the model's signature.
+2026-10-01 11:21:15,647 [INFO] MainWindow: MainWindow initialized successfully.
+2026-10-01 11:22:08,725 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-10-01 11:22:08,730 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-10-01 11:22:08,732 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-10-01 11:22:08,732 [INFO] Signature: Signature 'Sign Auth Protocol' initialized (4 props, 6 acts).
+2026-10-01 11:30:49,790 [INFO] MainWindow: MainWindow initialized successfully.
+2026-10-01 11:31:00,182 [INFO] Signature: Signature 'Sign_test' initialized (2 props, 2 acts).
+2026-10-01 11:31:00,186 [INFO] Signature: Signature 'Sign_test2' initialized (2 props, 2 acts).
+2026-10-01 11:31:00,188 [INFO] Signature: Signature 'Sign Paper' initialized (1 props, 1 acts).
+2026-10-01 11:31:00,190 [INFO] Signature: Signature 'Sign Auth Protocol' initialized (4 props, 6 acts).
+2026-10-01 11:44:05,589 [INFO] MainWindow: MainWindow initialized successfully.
+2026-10-01 11:44:35,467 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-10-01 11:44:35,473 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-10-01 11:44:35,475 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-10-01 11:44:35,476 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-10-01 11:44:35,480 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-10-01 11:44:35,483 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-10-01 11:44:35,487 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-10-01 11:44:35,489 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-10-01 11:44:35,489 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-10-01 11:44:35,494 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-10-01 11:44:49,126 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-10-01 11:44:49,152 [INFO] JSONHandler: Filtered Lattice 'filter' saved successfully.
+2026-10-01 11:44:49,152 [INFO] ObjectManager: Registered Filtered Lattice: filter
+2026-10-01 11:44:49,156 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-10-01 11:44:49,156 [INFO] ObjectManager: Registered Lattice: Boolean Algebra
+2026-10-01 11:44:54,376 [INFO] ErrorHandler: Prompting user confirmation - Confirm Deletion: Delete 1 item(s)?
+2026-10-01 11:44:55,480 [INFO] JSONHandler: Filtered Lattice 'filter' deleted.
+2026-10-01 11:44:55,483 [INFO] ObjectManager: Deleted Filtered Lattice: filter
+2026-10-01 11:44:58,814 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-10-01 11:44:58,816 [INFO] MathObjects: Lattice 'Lattice Paper' initialized (5 elements).
+2026-10-01 11:44:58,821 [INFO] MathObjects: Lattice 'Many Lattice Boolean Algebra Top' initialized (1 elements).
+2026-10-01 11:44:58,824 [INFO] MathObjects: Lattice 'L3 Paper' initialized (2 elements).
+2026-10-01 11:44:58,826 [INFO] MathObjects: Lattice 'L2 Paper' initialized (2 elements).
+2026-10-01 11:44:58,828 [INFO] MathObjects: Lattice 'L1 Paper' initialized (3 elements).
+2026-10-01 11:44:58,831 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-10-01 11:44:58,834 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-10-01 11:44:58,834 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-10-01 11:44:58,839 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-10-01 11:45:08,688 [INFO] MathObjects: Lattice 'Boolean Algebra' initialized (2 elements).
+2026-10-01 11:45:08,697 [INFO] JSONHandler: Filtered Lattice 'filter' saved successfully.
+2026-10-01 11:45:08,698 [INFO] ObjectManager: Registered Filtered Lattice: filter
+2026-10-01 11:45:32,968 [INFO] ErrorHandler: Prompting user confirmation - Confirm Deletion: Delete 1 item(s)?
+2026-10-01 11:45:33,973 [INFO] JSONHandler: Filtered Lattice 'filter' deleted.
+2026-10-01 11:45:33,974 [INFO] ObjectManager: Deleted Filtered Lattice: filter
+2026-10-01 11:49:36,048 [INFO] MainWindow: MainWindow initialized successfully.
+2026-10-01 11:49:46,932 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-10-01 11:49:46,934 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-10-01 11:49:46,938 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-10-01 11:49:46,940 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B2' initialized (2 elements).
+2026-10-01 11:49:46,942 [INFO] MathObjects: Lattice 'Lattice Auth Protocol B4' initialized (4 elements).
+2026-10-01 11:49:46,944 [INFO] MathObjects: Lattice 'Lattice Auth Protocol Linear4' initialized (4 elements).
+2026-10-01 11:49:46,944 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-10-01 11:49:46,944 [INFO] MathObjects: ManyLattice 'Many Lattice Auth Protocol' initialized with 4 sublattices.
+2026-10-01 11:49:46,961 [INFO] Signature: Signature 'Sign Auth Protocol' initialized (4 props, 6 acts).
+2026-10-01 11:49:46,964 [INFO] Structure: KripkeFrame 'Frame Auth Protocol' initialized (6 worlds, 6 actions).
+2026-10-01 11:49:46,964 [INFO] Structure: KripkeFrame 'Model Auth Protocol' initialized (6 worlds, 6 actions).
+2026-10-01 11:49:46,967 [INFO] Structure: Model 'Model Auth Protocol' initialized with ManyLattice 'Many Lattice Auth Protocol'.
+2026-10-01 11:49:46,967 [INFO] ObjectManager: Registered Model: Model Auth Protocol
+2026-10-01 11:49:46,970 [INFO] Signature: Signature 'Sign Auth Protocol' initialized (4 props, 6 acts).
+2026-10-01 11:49:46,970 [INFO] Structure: KripkeFrame 'Frame Auth Protocol' initialized (6 worlds, 6 actions).
+2026-10-01 11:49:46,970 [INFO] ObjectManager: Registered Kripke Frame: Frame Auth Protocol
+2026-10-01 11:49:46,970 [INFO] ObjectManager: Registered Signature: Sign Auth Protocol
+2026-10-01 11:49:46,970 [INFO] ObjectManager: Registered Many Lattice: Many Lattice Auth Protocol
+2026-10-01 11:49:46,975 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-10-01 11:49:46,975 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-10-01 11:49:46,977 [INFO] ObjectManager: Registered Filtered Lattice: Filter L6
+2026-10-01 11:49:46,977 [INFO] MathObjects: Lattice 'L6' initialized (6 elements).
+2026-10-01 11:49:46,977 [INFO] ObjectManager: Registered Lattice: L6
+2026-10-01 11:49:46,977 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol B2
+2026-10-01 11:49:46,977 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol B4
+2026-10-01 11:49:46,983 [INFO] ObjectManager: Registered Lattice: Lattice Auth Protocol Linear4
