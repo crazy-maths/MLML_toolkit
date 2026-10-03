@@ -47,7 +47,7 @@ class NewModelDialog(QDialog):
 
         self.tab_worlds = QWidget()
         self.setup_worlds_tab()
-        self.tabs.addTab(self.tab_worlds, "2. Sublattices & Valuations")
+        self.tabs.addTab(self.tab_worlds, "2. Sublattices and Valuations")
 
         buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
         buttons.accepted.connect(self.validate_and_accept)

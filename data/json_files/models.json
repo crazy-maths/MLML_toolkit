@@ -1,234 +1,14 @@
 {
     "models": [
         {
-            "name": "Model Paper",
-            "kripke_frame_name": "Frame Paper",
-            "many_lattice_name": "Many Lattice Paper",
-            "signature_name": "Sign Paper",
-            "worlds": [
-                {
-                    "name_long": "state3",
-                    "name_short": "w3"
-                },
-                {
-                    "name_long": "state1",
-                    "name_short": "w1"
-                },
-                {
-                    "name_long": "state2",
-                    "name_short": "w2"
-                }
-            ],
-            "initial_world": "w1",
-            "world_lattices": {
-                "w3": "L3 Paper",
-                "w1": "L1 Paper",
-                "w2": "L2 Paper"
-            },
-            "valuations": {
-                "w3": {
-                    "p": "b"
-                },
-                "w1": {
-                    "p": "x"
-                },
-                "w2": {
-                    "p": "a"
-                }
-            },
-            "description": "",
-            "accessibility_relation": {
-                "a1": {
-                    "w1": ["w3", "w2"],
-                    "w3": [],
-                    "w2": []
-                }
-            }
-        },
-        {
-            "name": "Model Test",
-            "kripke_frame_name": "Frame To Test",
-            "many_lattice_name": "Many Lattice Paper",
-            "signature_name": "Sign Paper",
-            "worlds": [
-                {
-                    "name_long": "state1",
-                    "name_short": "s1"
-                },
-                {
-                    "name_long": "state3",
-                    "name_short": "s3"
-                },
-                {
-                    "name_long": "state2",
-                    "name_short": "s2"
-                }
-            ],
-            "initial_world": "s1",
-            "world_lattices": {
-                "s1": "L1 Paper",
-                "s3": "L3 Paper",
-                "s2": "L2 Paper"
-            },
-            "valuations": {
-                "s1": {
-                    "p": "0"
-                },
-                "s3": {
-                    "p": "0"
-                },
-                "s2": {
-                    "p": "1"
-                }
-            },
-            "description": "",
-            "accessibility_relation": {
-                "a1": {
-                    "s1": ["s3", "s2"],
-                    "s3": [],
-                    "s2": []
-                }
-            }
-        },
-        {
-            "name": "Model To Reduct",
-            "kripke_frame_name": "Kripke Frame To Reduct",
-            "many_lattice_name": "Many Lattice Paper",
-            "signature_name": "Sign_test",
-            "worlds": [
-                {
-                    "name_long": "state2",
-                    "name_short": "s2"
-                },
-                {
-                    "name_long": "state4",
-                    "name_short": "s4"
-                },
-                {
-                    "name_long": "state3",
-                    "name_short": "s3"
-                },
-                {
-                    "name_long": "state1",
-                    "name_short": "s1"
-                }
-            ],
-            "initial_world": "s1",
-            "world_lattices": {
-                "s2": "L2 Paper",
-                "s4": "Lattice Paper",
-                "s3": "L1 Paper",
-                "s1": "L3 Paper"
-            },
-            "valuations": {
-                "s2": {
-                    "p": "1",
-                    "q": "1"
-                },
-                "s4": {
-                    "p": "0",
-                    "q": "0"
-                },
-                "s3": {
-                    "p": "1",
-                    "q": "1"
-                },
-                "s1": {
-                    "p": "0",
-                    "q": "0"
-                }
-            },
-            "description": "",
-            "accessibility_relation": {
-                "a": {
-                    "s1": ["s2"],
-                    "s2": ["s3"],
-                    "s3": ["s4"],
-                    "s4": ["s1"]
-                },
-                "b": {
-                    "s2": ["s1"],
-                    "s3": ["s2"],
-                    "s4": ["s3"],
-                    "s1": ["s4"]
-                }
-            }
-        },
-        {
-            "name": "Reduct Model Test",
-            "kripke_frame_name": "Frame_Reduct Model Test",
-            "many_lattice_name": "Many Lattice Paper",
-            "signature_name": "Sign Paper",
-            "worlds": [
-                {
-                    "name_long": "state2",
-                    "name_short": "s2"
-                },
-                {
-                    "name_long": "state4",
-                    "name_short": "s4"
-                },
-                {
-                    "name_long": "state3",
-                    "name_short": "s3"
-                },
-                {
-                    "name_long": "state1",
-                    "name_short": "s1"
-                }
-            ],
-            "initial_world": "s1",
-            "world_lattices": {
-                "s2": "L2 Paper",
-                "s4": "Lattice Paper",
-                "s3": "L1 Paper",
-                "s1": "L3 Paper"
-            },
-            "valuations": {
-                "s2": {
-                    "p": "1"
-                },
-                "s4": {
-                    "p": "0"
-                },
-                "s3": {
-                    "p": "1"
-                },
-                "s1": {
-                    "p": "0"
-                }
-            },
-            "description": "Reduct of Model To Reduct via morf_sign_test",
-            "accessibility_relation": {
-                "a1": {
-                    "s1": ["s2"],
-                    "s2": ["s3"],
-                    "s3": ["s4"],
-                    "s4": ["s1"]
-                }
-            }
-        },
-        {
-            "name": "Model Auth Protocol",
-            "kripke_frame_name": "Frame Auth Protocol",
-            "many_lattice_name": "Many Lattice Auth Protocol",
-            "signature_name": "Sign Auth Protocol",
+            "name": "Model Auth 1",
+            "kripke_frame_name": "Frame Auth",
+            "many_lattice_name": "Many Lattice L6",
+            "signature_name": "Signature Auth 1",
             "worlds": [
                 {
                     "name_long": "accessDenied",
                     "name_short": "aD"
-                },
-                {
-                    "name_long": "policyDecision",
-                    "name_short": "pD"
-                },
-                {
-                    "name_long": "accessGranted",
-                    "name_short": "aG"
-                },
-                {
-                    "name_long": "requestReceived",
-                    "name_short": "rR"
                 },
                 {
                     "name_long": "riskAssessment",
@@ -237,16 +17,28 @@
                 {
                     "name_long": "identityCheck",
                     "name_short": "iC"
+                },
+                {
+                    "name_long": "requestReceived",
+                    "name_short": "rR"
+                },
+                {
+                    "name_long": "accessGranted",
+                    "name_short": "aG"
+                },
+                {
+                    "name_long": "policyDecision",
+                    "name_short": "pD"
                 }
             ],
             "initial_world": "rR",
             "world_lattices": {
-                "aD": "Lattice Auth Protocol B2",
-                "pD": "Lattice Auth Protocol Linear4",
-                "aG": "Lattice Auth Protocol B2",
+                "aD": "Many Lattice L6 - B2",
+                "rA": "Many Lattice L6 - B4",
+                "iC": "Many Lattice L6 - B4",
                 "rR": "L6",
-                "rA": "Lattice Auth Protocol B4",
-                "iC": "Lattice Auth Protocol B4"
+                "aG": "Many Lattice L6 - B2",
+                "pD": "Many Lattice L6 - Linear 4"
             },
             "valuations": {
                 "aD": {
@@ -255,11 +47,23 @@
                     "granted": "0",
                     "lowRisk": "0"
                 },
-                "pD": {
-                    "credValid": "1",
+                "rA": {
+                    "credValid": "t",
                     "deviceTrusted": "t",
-                    "granted": "0",
-                    "lowRisk": "1"
+                    "granted": "f",
+                    "lowRisk": "b"
+                },
+                "iC": {
+                    "credValid": "t",
+                    "deviceTrusted": "b",
+                    "granted": "f",
+                    "lowRisk": "n"
+                },
+                "rR": {
+                    "credValid": "n",
+                    "deviceTrusted": "b",
+                    "granted": "f",
+                    "lowRisk": "n"
                 },
                 "aG": {
                     "credValid": "1",
@@ -267,74 +71,331 @@
                     "granted": "1",
                     "lowRisk": "1"
                 },
-                "rR": {
-                    "credValid": "n",
-                    "deviceTrusted": "b",
-                    "granted": "0",
-                    "lowRisk": "n"
-                },
-                "rA": {
-                    "credValid": "t",
+                "pD": {
+                    "credValid": "1",
                     "deviceTrusted": "t",
                     "granted": "t",
-                    "lowRisk": "n"
-                },
-                "iC": {
-                    "credValid": "t",
-                    "deviceTrusted": "b",
-                    "granted": "f",
-                    "lowRisk": "n"
+                    "lowRisk": "t"
                 }
             },
-            "description": "MLML model of the Authorization Protocol.",
+            "description": "Authorization Protocol 1",
             "accessibility_relation": {
-                "setUp": {
-                    "pD": ["iC"],
-                    "aD": [],
-                    "aG": [],
-                    "rR": [],
-                    "rA": [],
-                    "iC": []
-                },
                 "decide": {
                     "rA": ["pD"],
                     "aD": [],
-                    "pD": [],
-                    "aG": [],
+                    "iC": [],
                     "rR": [],
-                    "iC": []
-                },
-                "grant": {
-                    "pD": ["aG"],
-                    "aD": [],
                     "aG": [],
-                    "rR": [],
-                    "rA": [],
-                    "iC": []
+                    "pD": []
                 },
                 "deny": {
                     "iC": ["aD"],
                     "rA": ["aD"],
                     "pD": ["aD"],
                     "aD": [],
-                    "aG": [],
-                    "rR": []
-                },
-                "assess": {
-                    "iC": ["rA"],
-                    "aD": [],
-                    "pD": [],
-                    "aG": [],
                     "rR": [],
-                    "rA": []
+                    "aG": []
                 },
                 "authenticate": {
                     "rR": ["iC"],
                     "aD": [],
-                    "pD": [],
-                    "aG": [],
                     "rA": [],
-                    "iC": []
+                    "iC": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "stepUp": {
+                    "pD": ["iC"],
+                    "aD": [],
+                    "rA": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": []
+                },
+                "assess": {
+                    "iC": ["rA"],
+                    "aD": [],
+                    "rA": [],
+                    "rR": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "grant": {
+                    "pD": ["aG"],
+                    "aD": [],
+                    "rA": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": []
+                }
+            }
+        },
+        {
+            "name": "Reduct Model Auth",
+            "kripke_frame_name": "Frame_Reduct Model Auth",
+            "many_lattice_name": "Many Lattice L6",
+            "signature_name": "Signature Auth 2",
+            "worlds": [
+                {
+                    "name_long": "accessDenied",
+                    "name_short": "aD"
+                },
+                {
+                    "name_long": "riskAssessment",
+                    "name_short": "rA"
+                },
+                {
+                    "name_long": "identityCheck",
+                    "name_short": "iC"
+                },
+                {
+                    "name_long": "requestReceived",
+                    "name_short": "rR"
+                },
+                {
+                    "name_long": "accessGranted",
+                    "name_short": "aG"
+                },
+                {
+                    "name_long": "policyDecision",
+                    "name_short": "pD"
+                }
+            ],
+            "initial_world": "rR",
+            "world_lattices": {
+                "aD": "Many Lattice L6 - B2",
+                "rA": "Many Lattice L6 - B4",
+                "iC": "Many Lattice L6 - B4",
+                "rR": "L6",
+                "aG": "Many Lattice L6 - B2",
+                "pD": "Many Lattice L6 - Linear 4"
+            },
+            "valuations": {
+                "aD": {
+                    "lowRisk": "0",
+                    "granted": "0",
+                    "deviceTrusted": "0",
+                    "credValid": "0"
+                },
+                "rA": {
+                    "lowRisk": "b",
+                    "granted": "f",
+                    "deviceTrusted": "t",
+                    "credValid": "t"
+                },
+                "iC": {
+                    "lowRisk": "n",
+                    "granted": "f",
+                    "deviceTrusted": "b",
+                    "credValid": "t"
+                },
+                "rR": {
+                    "lowRisk": "n",
+                    "granted": "f",
+                    "deviceTrusted": "b",
+                    "credValid": "n"
+                },
+                "aG": {
+                    "lowRisk": "1",
+                    "granted": "1",
+                    "deviceTrusted": "1",
+                    "credValid": "1"
+                },
+                "pD": {
+                    "lowRisk": "t",
+                    "granted": "t",
+                    "deviceTrusted": "t",
+                    "credValid": "1"
+                }
+            },
+            "description": "Reduct of Model Auth 1 via Signature Morph Auth",
+            "accessibility_relation": {
+                "decide": {
+                    "rA": ["pD"],
+                    "aD": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "deny": {
+                    "iC": ["aD"],
+                    "rA": ["aD"],
+                    "pD": ["aD"],
+                    "aD": [],
+                    "rR": [],
+                    "aG": []
+                },
+                "authenticate": {
+                    "rR": ["iC"],
+                    "aD": [],
+                    "rA": [],
+                    "iC": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "assess": {
+                    "iC": ["rA"],
+                    "aD": [],
+                    "rA": [],
+                    "rR": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "grant": {
+                    "pD": ["aG"],
+                    "aD": [],
+                    "rA": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": []
+                }
+            }
+        },
+        {
+            "name": "Model Auth 2",
+            "kripke_frame_name": "Frame Auth 2",
+            "many_lattice_name": "Many Lattice L6",
+            "signature_name": "Signature Auth 1",
+            "worlds": [
+                {
+                    "name_long": "accessDenied",
+                    "name_short": "aD"
+                },
+                {
+                    "name_long": "riskAssessment",
+                    "name_short": "rA"
+                },
+                {
+                    "name_long": "authenticationFailed",
+                    "name_short": "aF"
+                },
+                {
+                    "name_long": "identityCheck",
+                    "name_short": "iC"
+                },
+                {
+                    "name_long": "requestReceived",
+                    "name_short": "rR"
+                },
+                {
+                    "name_long": "accessGranted",
+                    "name_short": "aG"
+                },
+                {
+                    "name_long": "policyDecision",
+                    "name_short": "pD"
+                }
+            ],
+            "initial_world": "rR",
+            "world_lattices": {
+                "aD": "Many Lattice L6 - B2",
+                "rA": "Many Lattice L6 - B4",
+                "aF": "Many Lattice L6 - B2",
+                "iC": "Many Lattice L6 - B4",
+                "rR": "L6",
+                "aG": "Many Lattice L6 - B2",
+                "pD": "Many Lattice L6 - Linear 4"
+            },
+            "valuations": {
+                "aD": {
+                    "credValid": "0",
+                    "deviceTrusted": "0",
+                    "granted": "0",
+                    "lowRisk": "0"
+                },
+                "rA": {
+                    "credValid": "t",
+                    "deviceTrusted": "t",
+                    "granted": "f",
+                    "lowRisk": "b"
+                },
+                "aF": {
+                    "credValid": "0",
+                    "deviceTrusted": "0",
+                    "granted": "0",
+                    "lowRisk": "0"
+                },
+                "iC": {
+                    "credValid": "t",
+                    "deviceTrusted": "b",
+                    "granted": "f",
+                    "lowRisk": "n"
+                },
+                "rR": {
+                    "credValid": "n",
+                    "deviceTrusted": "b",
+                    "granted": "f",
+                    "lowRisk": "n"
+                },
+                "aG": {
+                    "credValid": "1",
+                    "deviceTrusted": "1",
+                    "granted": "1",
+                    "lowRisk": "1"
+                },
+                "pD": {
+                    "credValid": "1",
+                    "deviceTrusted": "t",
+                    "granted": "t",
+                    "lowRisk": "t"
+                }
+            },
+            "description": "Authorization Protocol 2",
+            "accessibility_relation": {
+                "decide": {
+                    "rA": ["pD"],
+                    "aD": [],
+                    "aF": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "deny": {
+                    "iC": ["aD"],
+                    "rA": ["aD"],
+                    "pD": ["aD"],
+                    "rR": ["aF"],
+                    "aD": [],
+                    "aF": [],
+                    "aG": []
+                },
+                "authenticate": {
+                    "rR": ["iC"],
+                    "aD": [],
+                    "rA": [],
+                    "aF": [],
+                    "iC": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "stepUp": {
+                    "pD": ["iC"],
+                    "aD": [],
+                    "rA": [],
+                    "aF": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": []
+                },
+                "assess": {
+                    "iC": ["rA"],
+                    "aD": [],
+                    "rA": [],
+                    "aF": [],
+                    "rR": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "grant": {
+                    "pD": ["aG"],
+                    "aD": [],
+                    "rA": [],
+                    "aF": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": []
                 }
             }
         }

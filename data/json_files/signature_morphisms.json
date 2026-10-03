@@ -1,27 +1,21 @@
 {
     "signature_morphisms": [
         {
-            "name": "Morf1",
-            "source_sig": "Sign_test",
-            "target_sig": "Sign_test2",
+            "name": "Signature Morph Auth",
+            "source_sig": "Signature Auth 2",
+            "target_sig": "Signature Auth 1",
             "prop_map": {
-                "p": "r",
-                "q": "s"
+                "credValid": "credValid",
+                "deviceTrusted": "deviceTrusted",
+                "granted": "granted",
+                "lowRisk": "lowRisk"
             },
             "act_map": {
-                "a": "c",
-                "b": "d"
-            }
-        },
-        {
-            "name": "morf_sign_test",
-            "source_sig": "Sign Paper",
-            "target_sig": "Sign_test",
-            "prop_map": {
-                "p": "q"
-            },
-            "act_map": {
-                "a1": "a"
+                "assess": "assess",
+                "authenticate": "authenticate",
+                "decide": "decide",
+                "deny": "deny",
+                "grant": "grant"
             }
         }
     ]

@@ -1,13 +1,16 @@
 {
     "kripke_frame_morphisms": [
         {
-            "name": "Frame M TEST",
-            "source_frame": "Frame Paper",
-            "target_frame": "Frame To Test",
+            "name": "Frame Morph Auth",
+            "source_frame": "Frame Auth",
+            "target_frame": "Frame Auth 2",
             "world_map": {
-                "w1": "s1",
-                "w2": "s2",
-                "w3": "s3"
+                "aD": "aD",
+                "aG": "aG",
+                "iC": "iC",
+                "pD": "pD",
+                "rA": "rA",
+                "rR": "rR"
             }
         }
     ]

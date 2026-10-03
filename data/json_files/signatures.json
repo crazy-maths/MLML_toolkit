@@ -1,35 +1,36 @@
 {
     "signatures": [
         {
-            "name": "Sign_test",
-            "propositions": ["q", "p"],
-            "actions": ["b", "a"]
-        },
-        {
-            "name": "Sign_test2",
-            "propositions": ["r", "s"],
-            "actions": ["d", "c"]
-        },
-        {
-            "name": "Sign Paper",
-            "propositions": ["p"],
-            "actions": ["a1"]
-        },
-        {
-            "name": "Sign Auth Protocol",
+            "name": "Signature Auth 1",
             "propositions": [
                 "lowRisk",
-                "credValid",
+                "granted",
                 "deviceTrusted",
-                "granted"
+                "credValid"
             ],
             "actions": [
-                "setUp",
-                "grant",
                 "decide",
-                "assess",
                 "deny",
-                "authenticate"
+                "authenticate",
+                "stepUp",
+                "assess",
+                "grant"
+            ]
+        },
+        {
+            "name": "Signature Auth 2",
+            "propositions": [
+                "lowRisk",
+                "granted",
+                "deviceTrusted",
+                "credValid"
+            ],
+            "actions": [
+                "decide",
+                "deny",
+                "authenticate",
+                "assess",
+                "grant"
             ]
         }
     ]

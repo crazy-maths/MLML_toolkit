@@ -1,136 +1,16 @@
 {
     "kripke_frames": [
         {
-            "name": "Frame Paper",
-            "signature_name": "Sign Paper",
+            "name": "Frame Auth",
+            "signature_name": "Signature Auth 1",
             "worlds": [
-                {
-                    "name_long": "state2",
-                    "name_short": "w2"
-                },
-                {
-                    "name_long": "state1",
-                    "name_short": "w1"
-                },
-                {
-                    "name_long": "state3",
-                    "name_short": "w3"
-                }
-            ],
-            "initial_world": "w1",
-            "accessibility_relation": {
-                "a1": {
-                    "w1": ["w2", "w3"],
-                    "w2": [],
-                    "w3": []
-                }
-            }
-        },
-        {
-            "name": "Frame To Test",
-            "signature_name": "Sign Paper",
-            "worlds": [
-                {
-                    "name_long": "state3",
-                    "name_short": "s3"
-                },
-                {
-                    "name_long": "state1",
-                    "name_short": "s1"
-                },
-                {
-                    "name_long": "state2",
-                    "name_short": "s2"
-                }
-            ],
-            "initial_world": "s1",
-            "accessibility_relation": {
-                "a1": {
-                    "s1": ["s3", "s2"],
-                    "s3": [],
-                    "s2": []
-                }
-            }
-        },
-        {
-            "name": "Kripke Frame To Reduct",
-            "signature_name": "Sign_test",
-            "worlds": [
-                {
-                    "name_long": "state4",
-                    "name_short": "s4"
-                },
-                {
-                    "name_long": "state3",
-                    "name_short": "s3"
-                },
-                {
-                    "name_long": "state2",
-                    "name_short": "s2"
-                },
-                {
-                    "name_long": "state1",
-                    "name_short": "s1"
-                }
-            ],
-            "initial_world": "s1",
-            "accessibility_relation": {
-                "a": {
-                    "s1": ["s2"],
-                    "s2": ["s3"],
-                    "s3": ["s4"],
-                    "s4": ["s1"]
-                },
-                "b": {
-                    "s2": ["s1"],
-                    "s3": ["s2"],
-                    "s4": ["s3"],
-                    "s1": ["s4"]
-                }
-            }
-        },
-        {
-            "name": "Frame_Reduct Model Test",
-            "signature_name": "Sign Paper",
-            "worlds": [
-                {
-                    "name_long": "state2",
-                    "name_short": "s2"
-                },
-                {
-                    "name_long": "state4",
-                    "name_short": "s4"
-                },
-                {
-                    "name_long": "state3",
-                    "name_short": "s3"
-                },
-                {
-                    "name_long": "state1",
-                    "name_short": "s1"
-                }
-            ],
-            "initial_world": "s1",
-            "accessibility_relation": {
-                "a1": {
-                    "s1": ["s2"],
-                    "s2": ["s3"],
-                    "s3": ["s4"],
-                    "s4": ["s1"]
-                }
-            }
-        },
-        {
-            "name": "Frame Auth Protocol",
-            "signature_name": "Sign Auth Protocol",
-            "worlds": [
-                {
-                    "name_long": "policyDecision",
-                    "name_short": "pD"
-                },
                 {
                     "name_long": "accessDenied",
                     "name_short": "aD"
+                },
+                {
+                    "name_long": "riskAssessment",
+                    "name_short": "rA"
                 },
                 {
                     "name_long": "identityCheck",
@@ -141,47 +21,23 @@
                     "name_short": "rR"
                 },
                 {
-                    "name_long": "riskAssessment",
-                    "name_short": "rA"
-                },
-                {
                     "name_long": "accessGranted",
                     "name_short": "aG"
+                },
+                {
+                    "name_long": "policyDecision",
+                    "name_short": "pD"
                 }
             ],
             "initial_world": "rR",
             "accessibility_relation": {
-                "setUp": {
-                    "pD": ["iC"],
-                    "aD": [],
-                    "iC": [],
-                    "rR": [],
-                    "rA": [],
-                    "aG": []
-                },
-                "grant": {
-                    "pD": ["aG"],
-                    "aD": [],
-                    "iC": [],
-                    "rR": [],
-                    "rA": [],
-                    "aG": []
-                },
                 "decide": {
                     "rA": ["pD"],
-                    "pD": [],
                     "aD": [],
                     "iC": [],
                     "rR": [],
-                    "aG": []
-                },
-                "assess": {
-                    "iC": ["rA"],
-                    "pD": [],
-                    "aD": [],
-                    "rR": [],
-                    "rA": [],
-                    "aG": []
+                    "aG": [],
+                    "pD": []
                 },
                 "deny": {
                     "iC": ["aD"],
@@ -193,10 +49,198 @@
                 },
                 "authenticate": {
                     "rR": ["iC"],
-                    "pD": [],
+                    "aD": [],
+                    "rA": [],
+                    "iC": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "stepUp": {
+                    "pD": ["iC"],
+                    "aD": [],
+                    "rA": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": []
+                },
+                "assess": {
+                    "iC": ["rA"],
+                    "aD": [],
+                    "rA": [],
+                    "rR": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "grant": {
+                    "pD": ["aG"],
+                    "aD": [],
+                    "rA": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": []
+                }
+            }
+        },
+        {
+            "name": "Frame_Reduct Model Auth",
+            "signature_name": "Signature Auth 2",
+            "worlds": [
+                {
+                    "name_long": "accessDenied",
+                    "name_short": "aD"
+                },
+                {
+                    "name_long": "riskAssessment",
+                    "name_short": "rA"
+                },
+                {
+                    "name_long": "identityCheck",
+                    "name_short": "iC"
+                },
+                {
+                    "name_long": "requestReceived",
+                    "name_short": "rR"
+                },
+                {
+                    "name_long": "accessGranted",
+                    "name_short": "aG"
+                },
+                {
+                    "name_long": "policyDecision",
+                    "name_short": "pD"
+                }
+            ],
+            "initial_world": "rR",
+            "accessibility_relation": {
+                "decide": {
+                    "rA": ["pD"],
                     "aD": [],
                     "iC": [],
+                    "rR": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "deny": {
+                    "iC": ["aD"],
+                    "rA": ["aD"],
+                    "pD": ["aD"],
+                    "aD": [],
+                    "rR": [],
+                    "aG": []
+                },
+                "authenticate": {
+                    "rR": ["iC"],
+                    "aD": [],
                     "rA": [],
+                    "iC": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "assess": {
+                    "iC": ["rA"],
+                    "aD": [],
+                    "rA": [],
+                    "rR": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "grant": {
+                    "pD": ["aG"],
+                    "aD": [],
+                    "rA": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": []
+                }
+            }
+        },
+        {
+            "name": "Frame Auth 2",
+            "signature_name": "Signature Auth 1",
+            "worlds": [
+                {
+                    "name_long": "accessDenied",
+                    "name_short": "aD"
+                },
+                {
+                    "name_long": "riskAssessment",
+                    "name_short": "rA"
+                },
+                {
+                    "name_long": "authenticationFailed",
+                    "name_short": "aF"
+                },
+                {
+                    "name_long": "identityCheck",
+                    "name_short": "iC"
+                },
+                {
+                    "name_long": "requestReceived",
+                    "name_short": "rR"
+                },
+                {
+                    "name_long": "accessGranted",
+                    "name_short": "aG"
+                },
+                {
+                    "name_long": "policyDecision",
+                    "name_short": "pD"
+                }
+            ],
+            "initial_world": "rR",
+            "accessibility_relation": {
+                "decide": {
+                    "rA": ["pD"],
+                    "aD": [],
+                    "aF": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "deny": {
+                    "iC": ["aD"],
+                    "rA": ["aD"],
+                    "pD": ["aD"],
+                    "rR": ["aF"],
+                    "aD": [],
+                    "aF": [],
+                    "aG": []
+                },
+                "authenticate": {
+                    "rR": ["iC"],
+                    "aD": [],
+                    "rA": [],
+                    "aF": [],
+                    "iC": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "stepUp": {
+                    "pD": ["iC"],
+                    "aD": [],
+                    "rA": [],
+                    "aF": [],
+                    "iC": [],
+                    "rR": [],
+                    "aG": []
+                },
+                "assess": {
+                    "iC": ["rA"],
+                    "aD": [],
+                    "rA": [],
+                    "aF": [],
+                    "rR": [],
+                    "aG": [],
+                    "pD": []
+                },
+                "grant": {
+                    "pD": ["aG"],
+                    "aD": [],
+                    "rA": [],
+                    "aF": [],
+                    "iC": [],
+                    "rR": [],
                     "aG": []
                 }
             }

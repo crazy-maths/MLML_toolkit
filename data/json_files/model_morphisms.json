@@ -1,14 +1,17 @@
 {
     "model_morphisms": [
         {
-            "name": "Model M test",
-            "kripke_frame_morphism_name": "Frame M TEST",
-            "source_model": "Model Paper",
-            "target_model": "Model Test",
+            "name": "Model Morph Auth",
+            "kripke_frame_morphism_name": "Frame Morph Auth",
+            "source_model": "Model Auth 1",
+            "target_model": "Model Auth 2",
             "world_map": {
-                "w1": "s1",
-                "w2": "s2",
-                "w3": "s3"
+                "aD": "aD",
+                "aG": "aG",
+                "iC": "iC",
+                "pD": "pD",
+                "rA": "rA",
+                "rR": "rR"
             }
         }
     ]

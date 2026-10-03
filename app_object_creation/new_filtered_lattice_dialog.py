@@ -38,7 +38,7 @@ class NewFilteredLatticeDialog(QDialog):
         layout.addWidget(self.element_list)
 
         btn_layout = QHBoxLayout()
-        self.btn_ok = QPushButton("Create")
+        self.btn_ok = QPushButton("OK")
         self.btn_ok.clicked.connect(self.accept)
         self.btn_cancel = QPushButton("Cancel")
         self.btn_cancel.clicked.connect(self.reject)

@@ -2,7 +2,7 @@
 Main Application Module.
 
 This module defines the MainWindow class, which serves as the primary user interface
-for the Many-Logics Modal Structure Editor.
+for the Many-Logic Modal Structure Editor.
 """
 
 import sys
@@ -57,7 +57,7 @@ class MainWindow(QMainWindow):
     def __init__(self, manager: ObjectManager, theme_service: ThemeService):
         """Initializes the main window and internal storage structures."""
         super().__init__()
-        self.setWindowTitle("Many-Logics Modal Structure Editor")
+        self.setWindowTitle("Many-Logic Modal Structure Editor")
         self.resize(1100, 750)
         
         self.manager = manager

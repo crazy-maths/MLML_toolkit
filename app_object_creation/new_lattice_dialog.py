@@ -34,7 +34,7 @@ class NewLatticeDialog(QDialog):
         # TAB 1: Structure
         self.tab_struct = QWidget()
         self.setup_struct_tab()
-        self.tabs.addTab(self.tab_struct, "1. Elements & Order")
+        self.tabs.addTab(self.tab_struct, "1. Elements and Order")
         
         # TAB 2: Implication
         self.tab_imp = QWidget()
@@ -215,7 +215,7 @@ class NewLatticeDialog(QDialog):
                 self.tabs.setCurrentIndex(0)
                 return
             
-            elements = [e.strip() for e in self.elements_input.text().split(',') if e.strip()]
+            elements = sorted([e.strip() for e in self.elements_input.text().split(',') if e.strip()])
             if not elements:
                 ErrorHandler.show_warning("Validation Error", "Elements list cannot be empty.")
                 self.tabs.setCurrentIndex(0)
@@ -227,9 +227,12 @@ class NewLatticeDialog(QDialog):
                 return
 
             if elements != self._last_elements:
-                self._last_elements = list(elements)
-                self.populate_imp_table()
-                self.populate_neg_tab()
+                ErrorHandler.show_warning(
+                    "Elements Changed", 
+                    "The elements list has been modified. Please click 'Define an order' and review Implication and Negation."
+                )
+                self.tabs.setCurrentIndex(0)
+                return
 
             rows = self.table_imp.rowCount()
             cols = self.table_imp.columnCount()

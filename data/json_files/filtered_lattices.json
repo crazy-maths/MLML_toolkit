@@ -1,19 +1,24 @@
 {
     "filtered_lattices": [
         {
-            "filtered_lattice_name": "Filter Boolean Algebra",
+            "filtered_lattice_name": "Filter Top Boolean Algebra",
             "lattice_name": "Boolean Algebra",
             "filter": ["1"]
         },
         {
-            "filtered_lattice_name": "Filter Lattice Paper",
-            "lattice_name": "Lattice Paper",
+            "filtered_lattice_name": "Filter Top Three-Valued Algebra",
+            "lattice_name": "Three-Valued Algebra",
             "filter": ["1"]
+        },
+        {
+            "filtered_lattice_name": "Filter 2 Three-Valued Algebra",
+            "lattice_name": "Three-Valued Algebra",
+            "filter": ["1/2", "1"]
         },
         {
             "filtered_lattice_name": "Filter L6",
             "lattice_name": "L6",
-            "filter": ["1", "t"]
+            "filter": ["t", "1"]
         }
     ]
 }
